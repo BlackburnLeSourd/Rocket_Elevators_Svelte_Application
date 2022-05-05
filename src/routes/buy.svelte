@@ -14,8 +14,9 @@
 	export const prerender = true;
 </script>
 
+
 <svelte:head>
-	<title>About</title>
+	<title>Rocket Elevators</title>
 	<meta name="description" content="About this app" />
 </svelte:head>
 

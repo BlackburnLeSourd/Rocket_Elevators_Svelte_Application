@@ -7,7 +7,7 @@
 </script>
 
 <svelte:head>
-	<title>Home</title>
+	<title>Rocket Elevators</title>
 	<meta name="description" content="Svelte demo app" />
 </svelte:head>
 
@@ -20,11 +20,12 @@
 			</picture>
 		</div>
 
-		to your new<br />SvelteKit app
+		to your new bullshit<br />SvelteKit app garbage
 	</h1>
 
 	<h2>
-		try editing <strong>src/routes/index.svelte</strong>
+		try editing DELETING
+		<strong>src/routes/index.svelte</strong>
 	</h2>
 
 	<Counter />
