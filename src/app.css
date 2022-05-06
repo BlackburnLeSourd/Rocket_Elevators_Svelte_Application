@@ -133,7 +133,7 @@ button:focus:not(:focus-visible) {
 .footer-copyright { padding-top: 5px; }
 .footer-copyright a { color: #fff; border: 0; }
 .footer-copyright a:hover, .footer-copyright a:focus { color: #aaa; border: 0; }
-a { color:rgb(40, 1, 133); border-bottom: 1px dashed #2e07dd; text-decoration: none; transition: all .3s; }
+a { color:rgb(73, 32, 167); border-bottom: 1px dashed #2e07dd; text-decoration: none; transition: all .3s; }
 a:hover, a:focus { color: #d80606; border: 0; text-decoration: none; }
 
  

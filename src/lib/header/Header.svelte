@@ -9,9 +9,9 @@
     // List of navigation items
     const navItems = [
 
-      { label: "home", href: "#" },
-      { label: "buy", href: "#" },
-      { label: "porfolio", href: "#" },
+      { label: "home", href: "/" },
+      { label: "buy", href: "/buy" },
+      { label: "porfolio", href: "/porfolio" },
     ];
   
     // Mobile menu click event handler
