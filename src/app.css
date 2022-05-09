@@ -135,7 +135,9 @@ button:focus:not(:focus-visible) {
 .footer-copyright a:hover, .footer-copyright a:focus { color: #aaa; border: 0; }
 a { color:#d80606; border-bottom: 1px dashed #2e07dd; text-decoration: none; transition: all .3s;font-weight: bold; }
 a:hover, a:focus { color: rgb(73, 32, 167); border: 0; text-decoration: none; }
-
+footer{
+    margin-bottom: -60px;
+}
  
 /* footer queries */
 
