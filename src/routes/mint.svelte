@@ -13,10 +13,12 @@ const enableBrowser = () => defaultEvmStores.setBrowserProvider()
 
 //   free eligibility NFT
 
-let sendTipFreeNFT = true;
+let sendTipFreeNFT = "";
    
     onMount(async () => {
-        await fetch(`https://rocket-elevators-express-api.herokuapp.com/NFT/gift/${checkAccount}`)
+        await fetch(`https://rocket-elevators-express-api.herokuapp.com/NFT/gift/${checkAccount}`,{
+            method: "GET"
+        })
     .then(response => response.json())
     .then(data => {
             sendTipFreeNFT = data;
@@ -26,11 +28,17 @@ let sendTipFreeNFT = true;
   });
   });
 
+  function free() {
+    return buyWithRocket;
+  }
+
 // NOT ELIGIBILITY FREE, HERE TO BUY ROCKET 
 
 let buyWithRocket = {};
   onMount(async () => {
-    await fetch(`https://rocket-elevators-express-api.herokuapp.com/NFT/buyWithRocket/${checkAccount}`)
+    await fetch(`https://rocket-elevators-express-api.herokuapp.com/NFT/buyWithRocket/${checkAccount}`,{
+        method: "POST"
+    })
       .then((response) => response.json())
       .then((data) => {
         buyWithRocket = data;
@@ -58,7 +66,7 @@ let buyWithRocket = {};
   {#if $web3.version}
 
   <div > 
-    <a href="/mint" class="btn"on:click="{enableBrowser}">CLICK HERE TO CONNECT TO WALLET</a>
+    <a href="#" class="btn"on:click="{enableBrowser}">CLICK HERE TO CONNECT TO WALLET</a>
    </div>
   {/if} 
 
@@ -71,7 +79,7 @@ let buyWithRocket = {};
   </p>
 
   <p>
-    {checkAccount} Balance on {$chainData.name}=
+    Your Balance on {$chainData.name}=
     {#await balance}
     <span>waiting...</span>
     {:then value}
@@ -79,10 +87,18 @@ let buyWithRocket = {};
     {/await} {$chainData.nativeCurrency.symbol}
   </p>
   
-  {#if sendTipFreeNFT === "false"}
-
+  {#if sendTipFreeNFT === true}
+  
   <div> 
-    <a href="/mint" class="btn" onClick={() => buy()}>CLICK HERE TO GET FREE NFT</a>
+
+<h2> ** Sorry, you are not eligible for NFT free **</h2>
+    <a  class="btn" onClick={() => buy()}>* YOU CAN BUY HERE TO BUY FROM ROCKET *</a>
+   </div>
+{:else}
+<h2>** Congratulations, you can get free NFT **</h2>
+    <div> 
+    <a href= "#" class="btn"onClick={() => free()}>* CLICK HERE TO GET FREE NFT *</a>
+    <!-- {console.log("working" )} -->
    </div>
     {/if}
   {/if}
@@ -103,6 +119,17 @@ let buyWithRocket = {};
         text-decoration: underline;
        text-transform: uppercase;
     }
+h2{
+    color: blue;
+    font-weight: bold;
+    font-size: 28px;
+    margin-top: 80px;
+    text-decoration: underline;
+}
+    p{
+        color: red;
+        font-weight: bold;
+    }
     a.btn { 
     width: 400px;
     padding: 10px 25px 10px 25px;
@@ -112,7 +139,8 @@ let buyWithRocket = {};
     color: #ffffff; 
     background-color: red;
     margin-bottom: 60px;
-    margin-top:16%;
+    margin-top: 60px;
+
 }
 	@media (min-width: 640px) {
 		main {
