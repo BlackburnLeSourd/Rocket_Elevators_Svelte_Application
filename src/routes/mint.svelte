@@ -90,12 +90,7 @@
 		max-width: 240px;
 		margin-top: 80px;
 	}
-	h1 {
-		color: #ff3e00;
-		text-transform: uppercase;
-		font-size: 4em;
-		font-weight: 100;
-	}
+
     a.btn { 
     width: 400px;
     padding: 10px 25px 10px 25px;
