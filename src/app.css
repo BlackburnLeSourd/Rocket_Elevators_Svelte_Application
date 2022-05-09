@@ -127,14 +127,15 @@ button:focus:not(:focus-visible) {
 
 .footer-social { padding-top: 3px; text-align: right; }
 .footer-social a { margin-left: 20px; color: #777; border: 0; }
-.footer-social a:hover, .footer-social a:focus { color: #79a05f; border: 0; }
+.footer-social a:hover, .footer-social a:focus { color: #d80606; border: 0; }
 .footer-social i { font-size: 24px; vertical-align: middle; }
 
 .footer-copyright { padding-top: 5px; }
 .footer-copyright a { color: #fff; border: 0; }
 .footer-copyright a:hover, .footer-copyright a:focus { color: #aaa; border: 0; }
-a { color:rgb(73, 32, 167); border-bottom: 1px dashed #2e07dd; text-decoration: none; transition: all .3s; }
-a:hover, a:focus { color: #d80606; border: 0; text-decoration: none; }
+a { color:#d80606; border-bottom: 1px dashed #2e07dd; text-decoration: none; transition: all .3s;font-weight: bold; }
+a:hover, a:focus { color: rgb(73, 32, 167); border: 0; text-decoration: none; }
+
 
  
 /* footer queries */

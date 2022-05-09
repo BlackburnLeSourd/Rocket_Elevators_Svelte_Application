@@ -28,7 +28,7 @@ import logo from './R2.png';
                     <div class="row">
                         <div class="col-md-6">
                             <p><a class="scroll-link" href="/">Home</a></p>
-                            <p><a href="/buy">Buy</a></p>
+                            <p><a href="/mint">Mint</a></p>
                             <p><a href="/porfolio">Porfolio</a></p>
                         </div>
                     </div>

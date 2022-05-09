@@ -1,4 +1,5 @@
 <script>
+    
 	import { enhance } from '$lib/form';
 	import { scale } from 'svelte/transition';
 	import { flip } from 'svelte/animate';
@@ -14,7 +15,7 @@
 	 */
 
 	/** @type {Todo[]} */
-	export let todos;
+
 </script>
 
 <svelte:head>
