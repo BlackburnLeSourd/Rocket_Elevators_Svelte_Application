@@ -5,9 +5,17 @@
 
 
 <h1>
-    porfolio
+ * welcome to your  nft porfolio * 
 </h1>
 
 <style>
-    h1{margin-top: 60px;margin-bottom: 400px;}
+    h1{
+    margin-top: 60px;
+    margin-bottom: 400px;
+    text-transform: uppercase;
+    color: red;
+    font-weight: bold;
+    text-decoration: underline;
+    margin-top: 80px;
+    }
 </style>

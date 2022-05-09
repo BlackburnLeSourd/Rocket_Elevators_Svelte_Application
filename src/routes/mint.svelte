@@ -1,31 +1,48 @@
 <script>
- import { onMount } from 'svelte';
-  import { defaultEvmStores, web3, selectedAccount, connected, chainId, chainData } from 'svelte-web3'
-  export let message
-  export let tipAddress
+// @ts-nocheck
+
+  import { onMount } from 'svelte';
+  import { chainData,chainId,connected,defaultEvmStores,selectedAccount,web3 } from 'svelte-web3';
+//   export let message
+//   export let tipAddress
 //   const enable = () => defaultEvmStores.setProvider('https://sokol.poa.network')
-  const enableBrowser = () => defaultEvmStores.setBrowserProvider()
+ 
+const enableBrowser = () => defaultEvmStores.setBrowserProvider()
   $: checkAccount = $selectedAccount || '0x0000000000000000000000000000000000000000'
   $: balance = $connected ? $web3.eth.getBalance(checkAccount) : ''
-  const sendTip = async (e) => {
-    console.log('Received move event (sendTip button)', e)
-    const tx = await $web3.eth.sendTransaction({
-      // gasPrice: $web3.utils.toHex($web3.utils.toWei('30', 'gwei')),
-      gasLimit: $web3.utils.toHex('21000'),
-      from: $selectedAccount,
-      to: tipAddress,
-      value: $web3.utils.toHex($web3.utils.toWei('1', 'finney'))
-    })
-    console.log('Receipt from sendTip transaction', tx)
-    alert('Thanks!')
-  }
-  onMount(
-    async () => {
-      message = 'Connecting to your wallet app'
-       await defaultEvmStores.setProvider('https://rpc.slock.it/goerli')
-      message = ''
-    })
 
+//   free eligibility NFT
+
+let sendTipFreeNFT = true;
+   
+    onMount(async () => {
+        await fetch(`https://rocket-elevators-express-api.herokuapp.com/NFT/gift/${checkAccount}`)
+    .then(response => response.json())
+    .then(data => {
+            sendTipFreeNFT = data;
+    }).catch(error => {
+        // return [];
+
+  });
+  });
+
+// NOT ELIGIBILITY FREE, HERE TO BUY ROCKET 
+
+let buyWithRocket = {};
+  onMount(async () => {
+    await fetch(`https://rocket-elevators-express-api.herokuapp.com/NFT/buyWithRocket/${checkAccount}`)
+      .then((response) => response.json())
+      .then((data) => {
+        buyWithRocket = data;
+      })
+      .catch((error) => {
+        // return [];
+      });
+  });
+
+  function buy() {
+    return buyWithRocket;
+  }
 </script>
 
 
@@ -36,52 +53,41 @@
 
 <main>
 
-  <p>{message}</p>
+<h1> * Welcome to your wallet *</h1>
 
   {#if $web3.version}
-  <!-- <p>
-    <button on:click="{enable}">connect to https://sokol.poa.network</button>
-  </p> -->
-  <div id="linear"> 
+
+  <div > 
     <a href="/mint" class="btn"on:click="{enableBrowser}">CLICK HERE TO CONNECT TO WALLET</a>
    </div>
-  <!-- <p>
-    <button >connect to the wallet app </button> 
-  </p> -->
-  {:else}
-  <p>Please check that web3 as been added in Sapper src/template.html with the line:</p>
-  <pre>
-      &lt;script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js">&lt;/script>
-  </pre>
-  {/if}
+  {/if} 
 
   {#if $connected}
   <p>
     Connected chain: chainId = {$chainId}
   </p>
-  <!-- <p>
-    chainData = {JSON.stringify($chainData)}
-  </p> -->
   <p>
-    Selected account: {$selectedAccount || 'not connected'}
+    Your account adress = {$selectedAccount || 'not connected'}
   </p>
 
   <p>
-    {checkAccount} Balance on {$chainData.name}:
+    {checkAccount} Balance on {$chainData.name}=
     {#await balance}
     <span>waiting...</span>
     {:then value}
     <span>{value}</span>
     {/await} {$chainData.nativeCurrency.symbol}
   </p>
+  
+  {#if sendTipFreeNFT === "false"}
 
-  {#if false && $selectedAccount}
-  <p><button on:click="{sendTip}">send 0.01 {$chainData.nativeCurrency.symbol} tip to {tipAddress} (author)</button></p>
+  <div> 
+    <a href="/mint" class="btn" onClick={() => buy()}>CLICK HERE TO GET FREE NFT</a>
+   </div>
+    {/if}
   {/if}
-
-  {/if}
-
 </main>
+
 
 <style>
 	main {
@@ -91,6 +97,12 @@
 		margin-top: 80px;
 	}
 
+    h1{
+        color: red;
+        font-weight: bolder;
+        text-decoration: underline;
+       text-transform: uppercase;
+    }
     a.btn { 
     width: 400px;
     padding: 10px 25px 10px 25px;
