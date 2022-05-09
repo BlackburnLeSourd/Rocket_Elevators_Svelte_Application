@@ -1,3 +1,9 @@
+<svelte:head>
+	<title>Rocket Elevators</title>
+	<meta name="description" content="About this app" />
+</svelte:head>
+
+
 <h1>
     porfolio
 </h1>

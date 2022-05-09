@@ -29,7 +29,7 @@ import NFT3 from "./3.png";
           </div>
       </div>
       <div id="linear"> 
-          <a href="/buy" class="btn">CLICK HERE TO HAVE ACCES TO WALLET</a>
+          <a href="/mint" class="btn">CLICK HERE TO CONNECT TO WALLET</a>
          </div>
 </main>
 
@@ -52,23 +52,23 @@ import NFT3 from "./3.png";
     margin-top: 25px;
 }
 
-a.btn { width: 400px;
- padding: 10px 25px 10px 25px;
-  font-family: Arial; 
-  font-size: 16px;
-   text-decoration: none;
+a.btn { 
+    width: 400px;
+    padding: 10px 25px 10px 25px;
+    font-family: Arial; 
+    font-size: 16px;
+    text-decoration: none;
     color: #ffffff; 
     background-color: red;
+}
 
-     }
-      a.btn:hover {
-           background-color: #245191; }
+a.btn:hover {background-color: #245191; }
 
-           #linear{
-               display: flex;
-               justify-content: center;
-               padding-top: 40px;
-               padding-bottom: 40px;
-           }
+#linear{
+    display: flex;
+    justify-content: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
 
 </style> 
