@@ -118,6 +118,8 @@ let buyWithRocket = {};
         font-weight: bolder;
         text-decoration: underline;
        text-transform: uppercase;
+       margin-top: 60px;
+       margin-bottom: 30px;
     }
 h2{
     color: blue;

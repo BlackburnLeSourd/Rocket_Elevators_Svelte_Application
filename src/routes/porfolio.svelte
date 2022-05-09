@@ -12,7 +12,7 @@
 <style>
     h1{
     margin-top: 60px;
-    margin-bottom: 400px;
+    margin-bottom: 200px;
     text-transform: uppercase;
     color: red;
     font-weight: bold;

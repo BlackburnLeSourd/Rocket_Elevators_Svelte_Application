@@ -136,9 +136,6 @@ button:focus:not(:focus-visible) {
 a { color:#d80606; border-bottom: 1px dashed #2e07dd; text-decoration: none; transition: all .3s;font-weight: bold; }
 a:hover, a:focus { color: rgb(73, 32, 167); border: 0; text-decoration: none; }
 
-footer {
-    margin: 80px 0 0 0; /* or just use:  margin-top: 50px;*/
-  }
  
 /* footer queries */
 
