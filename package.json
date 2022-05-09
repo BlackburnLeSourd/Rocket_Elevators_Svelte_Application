@@ -27,7 +27,8 @@
     "rollup-plugin-copy": "^3.4.0",
     "svelte": "^3.48.0",
     "svelte-check": "^2.2.6",
-    "typescript": "~4.6.2"
+    "typescript": "~4.6.2",
+    "@sveltejs/adapter-vercel": "next"
   },
   "type": "module",
   "dependencies": {
