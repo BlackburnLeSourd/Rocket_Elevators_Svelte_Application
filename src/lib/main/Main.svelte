@@ -6,8 +6,11 @@ import NFT3 from "./3.png";
 
 
 <main >
-
+    <div class="column">
+        <h1>* Our NFT collections *</h1>
+    </div>
     <div class="row">
+ 
         <div class="column">
           <img src={NFT1} alt="Snow" style="width:100%">
         </div>
@@ -35,6 +38,15 @@ import NFT3 from "./3.png";
 
 <style>
 
+    h1{
+        margin-top: 80px;
+        font-weight: bolder;
+        color: red;
+        text-decoration: underline;
+        text-transform: uppercase;
+
+    }
+
 .row {
   display: flex;
   margin-top: 100px;
@@ -50,6 +62,7 @@ import NFT3 from "./3.png";
     color: red;
     font-weight: bold;
     margin-top: 25px;
+    font-size: larger;
 }
 
 a.btn { 
